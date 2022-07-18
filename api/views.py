@@ -1,10 +1,10 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
-from api.models import Task
-from api.serializers import TaskSerializer
+# from django.views.decorators.csrf import csrf_exempt
+from .models import Task
+from .serializers import TaskSerializer
 
-@csrf_exempt
+# @csrf_exempt
 def task_list(request):
     """
     List all tasks
