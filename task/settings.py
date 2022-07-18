@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-4+%4x+ryo=(q7au%3x23mz%e79cl97tdcskn)lt(th7ygsy^xr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['clint-task-app.herokuapp.com']
+ALLOWED_HOSTS = ['clint-task-app.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -57,7 +57,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
     "http://localhost:8080",
-    "https://angular-crash-topaz.vercel.app/",
+    "https://angular-crash-topaz.vercel.app",
 ]
 
 ROOT_URLCONF = 'task.urls'
