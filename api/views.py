@@ -8,6 +8,7 @@ def api_overview(request):
     api_urls = {
         'List':'/tasks/',
         'Create': 'tasks/create/',
+        'Detail': 'tasks/task/detail/<pk>/',
         'Delete': 'tasks/delete/<pk>/',
     }
 
@@ -23,7 +24,14 @@ def task_list(request):
     serializer = TaskSerializer(tasks, many=True)
     return Response(serializer.data)
 
-# Todo build: create and delete endpoints
+# Todo build:  detail, create and delete endpoints
+@api_view(['POST'])
+def task_update(request, pk):
+    task = Task.objects.get(id=pk)
+    serializer = TaskSerializer(instance=task, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
 
 @api_view(['POST'])
 def create_task(request):
