@@ -25,7 +25,7 @@ def task_list(request):
     return Response(serializer.data)
 
 # Todo build:  detail, create and delete endpoints
-@api_view(['POST'])
+@api_view(['PUT'])
 def task_update(request, pk):
     task = Task.objects.get(id=pk)
     serializer = TaskSerializer(instance=task, data=request.data)
