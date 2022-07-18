@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-4+%4x+ryo=(q7au%3x23mz%e79cl97tdcskn)lt(th7ygsy^xr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['clint-task-app.herokuapp.com']
 
 
 # Application definition
