@@ -57,6 +57,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
     "http://localhost:8080",
+    "https://angular-crash-topaz.vercel.app/",
 ]
 
 ROOT_URLCONF = 'task.urls'
