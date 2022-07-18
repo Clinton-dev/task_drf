@@ -4,13 +4,24 @@ from .models import Task
 from .serializers import TaskSerializer
 
 @api_view(['GET'])
+def api_overview(request):
+    api_urls = {
+        'List':'/tasks/',
+        'Create': 'tasks/create/',
+        'Delete': 'tasks/delete/<pk>/',
+    }
+
+    return Response(api_urls)
+
+
+@api_view(['GET'])
 def task_list(request):
     """
     List all tasks
     """
     tasks = Task.objects.all()
     serializer = TaskSerializer(tasks, many=True)
-    return Response(serializer.data, safe=False)
+    return Response(serializer.data)
 
 # Todo build: create and delete endpoints
 
